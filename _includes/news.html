@@ -1,0 +1,28 @@
+<!-- News Section -->
+<section id="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>What Is Happening</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                {% for post in site.posts limit:3 %}
+                <div class="news-item">
+                    <a href="{{ post.url | absolute_url }}"><img class="news-img" src="{{ post.image }}"
+                        alt="{{ post.image-alt | default: 'image representing a theme in this article' }}" /></a>
+                    <h3><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
+                    <span class="date-line">{{ post.location }}&mdash;{{ post.date | date: "%A, %B %-d, %Y" }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3 class="center"><a href="/news">More News</a></h3>
+            </div>
+        </div>
+    </div>
+</section>
