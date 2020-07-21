@@ -93,7 +93,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: {{ site.color.white }};
-    background-image: url("img/maryland-flag-billowing.jpg");
+    background-image: url("img/maryland-flag-billowing-widescreen.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -121,6 +121,11 @@ header .intro-text .name {
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
+}
+
+.navbar-brand img {
+    height: 30px;
+    border-radius: 0px;
 }
 
 @media(min-width:768px) {
@@ -159,8 +164,12 @@ header .intro-text .skills {
         padding: 10px 0;
     }
 
+    .navbar-fixed-top.navbar img {
+        height: 67px;
+    }
+
     .navbar-fixed-top.navbar-shrink img {
-        width: 80%;
+        height: 60px;
     }
 
     .navbar-fixed-top.navbar-shrink .navbar-brand {
@@ -235,6 +244,7 @@ section.donate
     border: solid 2px {{ site.color.gold }};
     color: {{ site.color.black }};
     background: {{ site.color.gold }};
+    margin: 2rem;
 }
 
 section.donate
@@ -265,30 +275,33 @@ section.donate
 }
 
 #platform .platform-item img {
-    right: 0;
-    margin: 0 0 15px;
-    max-height: 256px;
-    clip-path: circle(100px at center);
+    clip-path: inset(5rem 0px 0px 0px); 
+    margin-right: 0px;
+    margin-left: auto;
+    padding: 0px;
+    height: 26rem;
 }
 
 #platform .platform-item .platform-link {
     display: block;
     position: relative;
-    margin: 0 auto;
-    max-width: 400px;
-    max-height: 256px;
+    margin: 4rem auto;
+    padding: 0;
+    max-width: 95%;
+    height: 26rem;
     background-color: {{ site.color.black }};
     border-radius: 10px;
 }
 
 #platform .platform-item h3 {
-    margin-top: 11rem;
-    margin-left: 1rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    margin-top: -25rem;
     color: {{ site.color.gold }};
     text-align: right;
     text-transform: uppercase;
-    transform: rotate(-90deg);
-    transform-origin: 0 0;
+    /* transform: rotate(-90deg);
+    transform-origin: 0 0; */
     text-decoration: none;
 }
 
@@ -339,6 +352,25 @@ section.donate
 
 /* Flexbox platform Grid */
 @media (min-width: 640px) {
+    #platform .platform-item img {
+        right: 0;
+        margin: 0 0 15px;
+        max-height: 256px;
+        clip-path: circle(100px at center);
+    }
+
+    #platform .platform-item h3 {
+        margin-right: 0;
+        margin-top: 10rem;
+        margin-left: 1rem;
+        color: {{ site.color.gold }};
+        text-align: right;
+        text-transform: uppercase;
+        transform: rotate(-90deg);
+        transform-origin: 0 0;
+        text-decoration: none;
+    }
+
     .platform-flex-grid .platform-flex-row {
       display: flex;
       flex-flow: row wrap;
